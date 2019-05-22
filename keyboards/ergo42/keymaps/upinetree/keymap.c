@@ -14,21 +14,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* BASE
    * ,------------------------------------------------.   ,------------------------------------------------.
-   * | Tab  |   Q  |   W  |   E  |   R  |   T  |   (  |   |  )   |   Y  |   U  |   I  |   O  |   P  |  \ | |
+   * | Tab  |   Q  |   W  |   E  |   R  |   T  |  / ? |   |  \ | |   Y  |   U  |   I  |   O  |   P  |  ` ~ |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * | Ctrl |   A  |   S  |   D  |   F  |   G  | - _  |   | = +  |   H  |   J  |   K  |   L  |  ; : |  ' " |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * | Sft  |   Z  |   X  |   C  |   V  |   B  |  ,   |   |  .   |   N  |   M  |  [ { |  ] } |  / ? |=>GAME|
+   * | Sft  |   Z  |   X  |   C  |   V  |   B  |  ,   |   |  .   |   N  |   M  |  [ { |  ] } |  (   |  )   |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |      |      | Alt  | GUI  |ESC/  |Space/|Tab/  |   |Back  |Enter |~META | GUI  | Alt  |      |      |
+   * |      |      | Alt  | GUI  |ESC/  |Space/|Tab/  |   |Back  |Enter |~META | GUI  | Alt  |      |=>GAME|
    * |      |      |      |      |~SYMB |RCtrl |Shift |   |Space |      |      |      |      |      |      |
    * `------------------------------------------------'   `------------------------------------------------'
    */
   [BASE] = LAYOUT( \
-    KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,             KC_T,           S(KC_9),       S(KC_0), KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,    KC_BSLS, \
+    KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,             KC_T,           KC_SLSH,       KC_BSLS, KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,    KC_GRV, \
     KC_LCTRL, KC_A,    KC_S,    KC_D,    KC_F,             KC_G,           KC_MINS,       KC_EQL,  KC_H,   KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,             KC_B,           KC_COMM,       KC_DOT,  KC_N,   KC_M,     KC_LBRC, KC_RBRC, KC_SLSH, TG(GAME), \
-    XXXXXXX,  XXXXXXX, KC_LALT, KC_LGUI, LT(SYMB, KC_ESC), RCTL_T(KC_SPC), SFT_T(KC_TAB), KC_BSPC, KC_ENT, MO(META), KC_RGUI, KC_RALT, XXXXXXX, XXXXXXX \
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,             KC_B,           KC_COMM,       KC_DOT,  KC_N,   KC_M,     KC_LBRC, KC_RBRC, S(KC_9), S(KC_0), \
+    XXXXXXX,  XXXXXXX, KC_LALT, KC_LGUI, LT(SYMB, KC_ESC), RCTL_T(KC_SPC), SFT_T(KC_TAB), KC_BSPC, KC_ENT, MO(META), KC_RGUI, KC_RALT, XXXXXXX, TG(GAME) \
   ),
 
   /* META
@@ -37,15 +37,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * |      | XXXX | XXXX | Kana | Eisu | XXXX | XXXX |   | XXXX | Left | Down |  Up  |Right | PgDn | PgUp |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | XXXX |
+   * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |      |   |      |  F7  |  F8  |  F9  | F10  |  F11 |  F12 |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * |      |      |      |      |      |      |      |   |      |      |      |Reset |      |      |      |
    * `------------------------------------------------'   `------------------------------------------------'
    */
   [META] = LAYOUT( \
     _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    XXXXXXX, XXXXXXX, KC_6,    KC_7,    KC_8,   KC_9,    KC_0,    KC_PERC, \
-    _______, XXXXXXX, XXXXXXX, KC_EISU, KC_KNA,  XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT, KC_PGDN, KC_PGUP, \
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, KC_F11,  KC_F12,  XXXXXXX, \
+    _______, XXXXXXX, XXXXXXX, KC_KNA,  KC_EISU, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT, KC_PGDN, KC_PGUP, \
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______, _______, KC_F7,   KC_F8,   KC_F9,   KC_F10, KC_F11,  KC_F12, \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET, _______, _______, _______ \
   ),
 
