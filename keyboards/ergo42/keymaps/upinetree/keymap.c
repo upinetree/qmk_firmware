@@ -20,22 +20,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * | Sft  |   Z  |   X  |   C  |   V  |   B  |  ,   |   |  .   |   N  |   M  |  [ { |  ] } |  (   |  )   |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |      |      | Alt  | GUI  |ESC/  |Space/|Tab/  |   |Back  |Enter |~META | GUI  | Alt  |      |=>GAME|
-   * |      |      |      |      |~SYMB |RCtrl |Shift |   |Space |      |      |      |      |      |      |
+   * | MEH  |      | Alt  | GUI/ |ESC/  |Tab/  |Space/|   |Enter |Back  |~META | GUI/ | Alt  |      |=>GAME|
+   * |      |      |      | Eisu |~SYMB |Shift |RCtrl |   |      |Space |      | Kana |      |      |      |
    * `------------------------------------------------'   `------------------------------------------------'
    */
   [BASE] = LAYOUT( \
-    KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,             KC_T,           KC_SLSH,       KC_BSLS, KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,    KC_GRV, \
-    KC_LCTRL, KC_A,    KC_S,    KC_D,    KC_F,             KC_G,           KC_MINS,       KC_EQL,  KC_H,   KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,             KC_B,           KC_COMM,       KC_DOT,  KC_N,   KC_M,     KC_LBRC, KC_RBRC, S(KC_9), S(KC_0), \
-    XXXXXXX,  XXXXXXX, KC_LALT, KC_LGUI, LT(SYMB, KC_ESC), RCTL_T(KC_SPC), SFT_T(KC_TAB), KC_BSPC, KC_ENT, MO(META), KC_RGUI, KC_RALT, XXXXXXX, TG(GAME) \
+    KC_TAB,   KC_Q,    KC_W,    KC_E,            KC_R,             KC_T,          KC_SLSH,        KC_BSLS, KC_Y,    KC_U,     KC_I,           KC_O,    KC_P,    KC_GRV, \
+    KC_LCTRL, KC_A,    KC_S,    KC_D,            KC_F,             KC_G,          KC_MINS,        KC_EQL,  KC_H,    KC_J,     KC_K,           KC_L,    KC_SCLN, KC_QUOT, \
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,            KC_V,             KC_B,          KC_COMM,        KC_DOT,  KC_N,    KC_M,     KC_LBRC,        KC_RBRC, S(KC_9), S(KC_0), \
+    KC_MEH,   XXXXXXX, KC_LALT, LGUI_T(KC_EISU), LT(SYMB, KC_ESC), SFT_T(KC_TAB), RCTL_T(KC_SPC), KC_ENT,  KC_BSPC, MO(META), RGUI_T(KC_KNA), KC_RALT, XXXXXXX, TG(GAME) \
   ),
 
   /* META
    * ,------------------------------------------------.   ,------------------------------------------------.
    * |      |   1  |   2  |   3  |   4  |   5  | XXXX |   | XXXX |   6  |   7  |   8  |   9  |   0  |   %  |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
-   * |      | XXXX | XXXX | Kana | Eisu | XXXX | XXXX |   | XXXX | Left | Down |  Up  |Right | PgDn | PgUp |
+   * |      | XXXX | XXXX | XXXX | XXXX | XXXX | XXXX |   | XXXX | Left | Down |  Up  |Right | PgDn | PgUp |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |      |   |      |  F7  |  F8  |  F9  | F10  |  F11 |  F12 |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [META] = LAYOUT( \
     _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    XXXXXXX, XXXXXXX, KC_6,    KC_7,    KC_8,   KC_9,    KC_0,    KC_PERC, \
-    _______, XXXXXXX, XXXXXXX, KC_KNA,  KC_EISU, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT, KC_PGDN, KC_PGUP, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT, KC_PGDN, KC_PGUP, \
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______, _______, KC_F7,   KC_F8,   KC_F9,   KC_F10, KC_F11,  KC_F12, \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET, _______, _______, _______ \
   ),
