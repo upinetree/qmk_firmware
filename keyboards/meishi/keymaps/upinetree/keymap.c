@@ -15,10 +15,18 @@
  */
 #include QMK_KEYBOARD_H
 
+enum custom_keycodes {
+  EMOJI_INNOCENT = SAFE_RANGE,
+  EMOJI_JOY
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[0] = LAYOUT( /* Base */
-  LALT(KC_1),  LALT(KC_2),  LALT(KC_3), LALT(KC_TAB) \
-),
+  [0] = LAYOUT(
+    KC_ENTER, EMOJI_JOY, EMOJI_INNOCENT, OSL(1) \
+  ),
+  [1] = LAYOUT(
+    HYPR(KC_BSLASH), LALT(KC_1), LALT(KC_2), LALT(KC_3) \
+  ),
 };
 
 const uint16_t PROGMEM fn_actions[] = {
@@ -34,6 +42,19 @@ void matrix_scan_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case EMOJI_INNOCENT:
+      if (record->event.pressed) {
+        SEND_STRING(":innocent:");
+      }
+      break;
+
+    case EMOJI_JOY:
+      if (record->event.pressed) {
+        SEND_STRING(":joy:");
+      }
+      break;
+  }
   return true;
 }
 
