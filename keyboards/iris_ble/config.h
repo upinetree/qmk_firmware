@@ -1,6 +1,7 @@
 /*
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2015 Jack Humbert
+Copyright 2017 Biacco42
 Copyright 2018 Sekigon
 
 This program is free software: you can redistribute it and/or modify
@@ -24,22 +25,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BLE_NUS_MAX_INTERVAL 70
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x3060
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    Yushakobo
-#define PRODUCT         Helix Beta
-#define DESCRIPTION     A split keyboard for the cheap makers
+#define VENDOR_ID       0xBC42
+#define PRODUCT_ID      0x0042
+#define DEVICE_VER      0x0100
+#define MANUFACTURER    Keebio
+#define PRODUCT         Iris
+#define DESCRIPTION     A split ergonomic keyboard with 4x6 vertically staggered keys and 3 or 4 thumb keys.
 
 /* key matrix size */
-#if  HELIX_ROWS == 4
-  #define MATRIX_ROWS 8
-  #define LAYOUT LAYOUT_HELIX_4ROW
-#elif HELIX_ROWS == 5
-  #define MATRIX_ROWS 10
-  #define LAYOUT LAYOUT_HELIX_5ROW
-#endif
-#define MATRIX_COLS 7
+#define MATRIX_ROWS_DEFAULT 10
+#define MATRIX_COLS_DEFAULT 6
+#define MATRIX_ROWS 10
+#define MATRIX_COLS 6
 
 #define DIODE_DIRECTION COL2ROW
 
@@ -48,8 +45,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE    1
-
-#define TAPPING_TERM 100
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
@@ -60,18 +55,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
 )
-
-#define PROGMEM // arm-gcc does not interpret PROGMEM
-#define RGB_DI_PIN 8     // The pin the LED strip is connected to
-#ifdef RGBLED_BACK
-  #if HELIX_ROWS == 4
-    #define RGBLED_NUM 25
-  #else
-    #define RGBLED_NUM 32
-  #endif
-#else
-  #define RGBLED_NUM 6
-#endif
 
 /*
  * Feature disable options

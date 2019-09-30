@@ -1,15 +1,15 @@
 
-DEFAULT_FOLDER = helix_ble/master
+DEFAULT_FOLDER = iris_ble/master
 
 NRF_DEBUG = no
 
-RGBLIGHT_ENABLE = yes
+RGBLIGHT_ENABLE = no
 MOUSEKEY_ENABLE = yes	# Mouse keys
 EXTRAKEY_ENABLE = yes	# Audio control and System control
 CONSOLE_ENABLE = yes	# Console for debug
 COMMAND_ENABLE = yes    # Commands for debug and configuration
 NKRO_ENABLE = no	    # USB Nkey Rollover
-CUSTOM_MATRIX = yes 	# This flag should be on for nrf52
+CUSTOM_MATRIX = yes # This flag should be on for nrf52
 
 ## chip/board settings
 MCU_FAMILY = NRF52

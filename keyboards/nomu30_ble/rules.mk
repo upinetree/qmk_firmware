@@ -1,15 +1,16 @@
 
-DEFAULT_FOLDER = helix_ble/master
+DEFAULT_FOLDER = nomu30_ble/pro_v1
 
 NRF_DEBUG = no
 
-RGBLIGHT_ENABLE = yes
 MOUSEKEY_ENABLE = yes	# Mouse keys
 EXTRAKEY_ENABLE = yes	# Audio control and System control
 CONSOLE_ENABLE = yes	# Console for debug
 COMMAND_ENABLE = yes    # Commands for debug and configuration
+SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
 NKRO_ENABLE = no	    # USB Nkey Rollover
-CUSTOM_MATRIX = yes 	# This flag should be on for nrf52
+CUSTOM_MATRIX = yes # This flag should be on for nrf52
+TAP_DANCE_ENABLE = no
 
 ## chip/board settings
 MCU_FAMILY = NRF52
