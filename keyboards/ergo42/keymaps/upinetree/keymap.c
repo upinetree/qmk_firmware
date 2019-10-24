@@ -20,9 +20,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [META] = LAYOUT( \
-    KC_CAPS, XXXXXXX, XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX, XXXXXXX, XXXXXXX,  KC_END, KC_HOME, XXXXXXX, XXXXXXX, XXXXXXX, \
-    _______, XXXXXXX, XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN, KC_PGUP, \
-    _______, XXXXXXX, KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, \
+    KC_CAPS, XXXXXXX, XXXXXXX, KC_7,    KC_8,    KC_9,    _______, _______, XXXXXXX,  KC_END, KC_HOME, XXXXXXX, XXXXXXX, XXXXXXX, \
+    _______, XXXXXXX, XXXXXXX, KC_4,    KC_5,    KC_6,    _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN, KC_PGUP, \
+    _______, XXXXXXX, KC_0,    KC_1,    KC_2,    KC_3,    _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET,   _______, _______, _______ \
   ),
 
